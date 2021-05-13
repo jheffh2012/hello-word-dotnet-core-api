@@ -4,7 +4,7 @@ WORKDIR /app
 COPY HelloWord.Dotnet.sln ./
 COPY ./src ./src
 RUN dotnet restore HelloWord.Dotnet.sln
-RUN dotnet publish -c Release -r linux-x64 ./src/HelloWord.Dotnet.Api/HelloWord.Dotnet.Api.csproj -o /app/publish
+RUN dotnet publish -c Release ./src/HelloWord.Dotnet.Api/HelloWord.Dotnet.Api.csproj -o /app/publish
 
 
 FROM mcr.microsoft.com/dotnet/aspnet:5.0
